@@ -5,18 +5,21 @@ import java.io.IOException;
 import java.time.Duration;
 import java.util.Properties;
 
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.ss.usermodel.WorkbookFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.bidi.module.Browser;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.interactions.Actions;
 
 public class CreateOrgTest {
 
 	public static void main(String[] args) throws InterruptedException, IOException {
 
+//		Get data from properties file
 //		Get the java representation object of the physical file
 		FileInputStream fis = new FileInputStream(
 				"C:\\Users\\User\\Basic_Selenium\\VtigerCRMTestFramework\\src\\test\\resources\\commonData.properties");
@@ -31,6 +34,13 @@ public class CreateOrgTest {
 		String USERNAME = pObj.getProperty("un");
 		String PASSWORD = pObj.getProperty("pwd");
 
+		
+//		Get data from excel file
+		FileInputStream fis2 = new FileInputStream("C:\\Users\\User\\Desktop\\testScriptDataM6.xlsx");
+		Workbook wb = WorkbookFactory.create(fis2);
+		String orgName = wb.getSheet("org").getRow(3).getCell(0).getStringCellValue() + (int) (Math.random() * 1000);
+		
+		
 		WebDriver driver = null;
 		if (BROWSER.equals("chrome")) {
 			driver = new ChromeDriver();
@@ -50,7 +60,7 @@ public class CreateOrgTest {
 
 		WebElement un = driver.findElement(By.name("user_name"));
 		un.sendKeys(USERNAME);
-		
+
 		WebElement pwd = driver.findElement(By.name("user_password"));
 		pwd.sendKeys(PASSWORD);
 
@@ -62,7 +72,7 @@ public class CreateOrgTest {
 		driver.findElement(By.xpath("//img[@title='Create Organization...']")).click();
 
 //		Filling Data
-		String orgName = "Gobhi_" + (int) (Math.random() * 1000);
+//		String orgName = "Gobhi_" + (int) (Math.random() * 1000);
 		WebElement orgField = driver.findElement(By.name("accountname"));
 		orgField.sendKeys(orgName);
 
@@ -81,12 +91,12 @@ public class CreateOrgTest {
 		}
 
 ////		Logout
-//		WebElement profile = driver.findElement(By.xpath("//img[@src='themes/softed/images/user.PNG']"));
-//		Actions act = new Actions(driver);
-//		act.moveToElement(profile).perform();
-//		Thread.sleep(2000);
-//		driver.findElement(By.linkText("Sign Out")).click();
-//		
+		WebElement profile = driver.findElement(By.xpath("//img[@src='themes/softed/images/user.PNG']"));
+		Actions act = new Actions(driver);
+		act.moveToElement(profile).perform();
+		Thread.sleep(2000);
+		driver.findElement(By.linkText("Sign Out")).click();
+
 		driver.quit();
 	}
 }
