@@ -31,6 +31,7 @@ public class WriteDataBackToExcel {
 		Cell cell = row.getCell(4);
 		
 //		Step - 6> Write Data into that cell
+//		cell.getStringCellValue();
 		cell.setCellType(CellType.STRING);
 		cell.setCellValue("hi there");
 		
@@ -40,6 +41,5 @@ public class WriteDataBackToExcel {
 		
 		System.out.println("Data added successfully!!!");
 		wb.close();
-		
 	}
 }

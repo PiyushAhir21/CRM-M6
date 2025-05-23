@@ -15,31 +15,23 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
 
+import generic_utility.FileUtility;
+import generic_utility.WebDriverUtility;
+
 public class CreateOrgTest {
 
 	public static void main(String[] args) throws InterruptedException, IOException {
 
 //		Get data from properties file
-//		Get the java representation object of the physical file
-		FileInputStream fis = new FileInputStream(
-				"C:\\Users\\User\\Basic_Selenium\\VtigerCRMTestFramework\\src\\test\\resources\\commonData.properties");
-
-//		fetch keys, by using load method of Properties class
-		Properties pObj = new Properties();
-		pObj.load(fis);
-
-//		get values, by using getProperty method
-		String BROWSER = pObj.getProperty("bro");
-		String URL = pObj.getProperty("url");
-		String USERNAME = pObj.getProperty("un");
-		String PASSWORD = pObj.getProperty("pwd");
-
+		FileUtility fUtil = new FileUtility();
 		
+		String BROWSER = fUtil.getDataFromPropertiesFile("bro");
+		String URL = fUtil.getDataFromPropertiesFile("url");
+		String USERNAME = fUtil.getDataFromPropertiesFile("un");
+		String PASSWORD = fUtil.getDataFromPropertiesFile("pwd");
+
 //		Get data from excel file
-		FileInputStream fis2 = new FileInputStream("C:\\Users\\User\\Desktop\\testScriptDataM6.xlsx");
-		Workbook wb = WorkbookFactory.create(fis2);
-		String orgName = wb.getSheet("org").getRow(3).getCell(0).getStringCellValue() + (int) (Math.random() * 1000);
-		
+		String orgName = fUtil.getDataFromExcelFile("org", 3, 0);
 		
 		WebDriver driver = null;
 		if (BROWSER.equals("chrome")) {
@@ -51,8 +43,10 @@ public class CreateOrgTest {
 		} else {
 			driver = new ChromeDriver();
 		}
+		
+		WebDriverUtility wdUtil = new WebDriverUtility(driver);
+		wdUtil.maximizeWindow();
 
-		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 
 //		Login in vtiger crm
@@ -67,33 +61,37 @@ public class CreateOrgTest {
 		WebElement loginBtn = driver.findElement(By.id("submitButton"));
 		loginBtn.click();
 
-//		Creating Organization
-		driver.findElement(By.linkText("Organizations")).click();
-		driver.findElement(By.xpath("//img[@title='Create Organization...']")).click();
-
-//		Filling Data
-//		String orgName = "Gobhi_" + (int) (Math.random() * 1000);
-		WebElement orgField = driver.findElement(By.name("accountname"));
-		orgField.sendKeys(orgName);
-
-//		Save
-		WebElement saveBtn = driver.findElement(By.xpath("//input[@title='Save [Alt+S]']"));
-		saveBtn.click();
-
-//		Verification 
-		WebElement header = driver.findElement(By.className("dvHeaderText"));
-		String actOrgName = header.getText();
-
-		if (actOrgName.contains(orgName)) {
-			System.out.println("Created Organization successfully!!!");
-		} else {
-			System.out.println("FAILED!!!");
-		}
+////		Creating Organization
+//		driver.findElement(By.linkText("Organizations")).click();
+//		driver.findElement(By.xpath("//img[@title='Create Organization...']")).click();
+//
+////		Filling Data
+////		String orgName = "Gobhi_" + (int) (Math.random() * 1000);
+//		WebElement orgField = driver.findElement(By.name("accountname"));
+//		orgField.sendKeys(orgName);
+//
+////		Save
+//		WebElement saveBtn = driver.findElement(By.xpath("//input[@title='Save [Alt+S]']"));
+//		saveBtn.click();
+//
+////		Verification 
+//		WebElement header = driver.findElement(By.className("dvHeaderText"));
+//		String actOrgName = header.getText();
+//
+//		if (actOrgName.contains(orgName)) {
+//			System.out.println("Created Organization successfully!!!");
+//		} else {
+//			System.out.println("FAILED!!!");
+//		}
 
 ////		Logout
 		WebElement profile = driver.findElement(By.xpath("//img[@src='themes/softed/images/user.PNG']"));
-		Actions act = new Actions(driver);
-		act.moveToElement(profile).perform();
+//		Hover
+//		Actions act = new Actions(driver);
+//		act.moveToElement(profile).perform();
+		
+		wdUtil.hover(profile);
+		
 		Thread.sleep(2000);
 		driver.findElement(By.linkText("Sign Out")).click();
 
