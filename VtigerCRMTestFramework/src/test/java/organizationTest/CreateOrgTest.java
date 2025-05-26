@@ -14,6 +14,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import generic_utility.FileUtility;
 import generic_utility.WebDriverUtility;
+import object_repository.LoginPage;
 
 /**
  * This class automates the creation of a new organization in vtiger CRM. It
@@ -61,9 +62,23 @@ public class CreateOrgTest {
 
 		// Open URL and login
 		driver.get(url);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.name("user_name"))).sendKeys(username);
-		driver.findElement(By.name("user_password")).sendKeys(password);
-		driver.findElement(By.id("submitButton")).click();
+
+//		WebElement un = driver.findElement(By.name("user_name"));
+//		un.sendKeys(username);
+//
+//		WebElement pwd = driver.findElement(By.name("user_password"));
+//		pwd.sendKeys(password);
+//
+//		WebElement loginBtn = driver.findElement(By.id("submitButton"));
+//		loginBtn.click();
+
+//		Login
+		LoginPage lp = new LoginPage(driver);
+//		lp.getUn().sendKeys("admin");
+//		lp.getPwd().sendKeys("password");
+//		lp.getLoginBtn().click();
+
+		lp.login();
 
 		// Navigate to Organizations module
 		wait.until(ExpectedConditions.elementToBeClickable(By.linkText("Organizations"))).click();
