@@ -1,4 +1,4 @@
-package organizationTest;
+package contactTest;
 
 import java.io.IOException;
 import java.time.Duration;
@@ -25,13 +25,13 @@ import object_repository.LoginPage;
  * @author Piyush Baldaniya
  * @version 1.1
  */
-public class CreateOrgTest {
+public class CreateConTest {
 	@Test
 	public void createOrgTest() throws IOException {
 		FileUtility fileUtil = new FileUtility();
 		String browser = fileUtil.getDataFromPropertiesFile("bro");
 		String url = fileUtil.getDataFromPropertiesFile("url");
-		String orgName = fileUtil.getDataFromExcelFile("org", 3, 0);
+		String lastName = fileUtil.getDataFromExcelFile("contact", 3, 0);
 
 		WebDriver driver = null;
 
@@ -79,21 +79,21 @@ public class CreateOrgTest {
 		lp.login();
 
 		// Navigate to Organizations module
-		wait.until(ExpectedConditions.elementToBeClickable(By.linkText("Organizations"))).click();
+		wait.until(ExpectedConditions.elementToBeClickable(By.linkText("Contacts"))).click();
 
 		// Click on Create Organization
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//img[@title='Create Organization...']"))).click();
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//img[@title='Create Contact...']"))).click();
 
 		// Enter organization name and save
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.name("accountname"))).sendKeys(orgName);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.name("lastname"))).sendKeys(lastName);
 		driver.findElement(By.xpath("//input[@title='Save [Alt+S]']")).click();
 
 		// Verify organization creation
 		WebElement header = wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("dvHeaderText")));
-		if (header.getText().contains(orgName)) {
-			System.out.println("Created Organization successfully!!!");
+		if (header.getText().contains(lastName)) {
+			System.out.println("Created Contact successfully!!!");
 		} else {
-			System.out.println("FAILED to create organization.");
+			System.out.println("FAILED to create contact.");
 		}
 
 		// Logout from vtiger CRM
