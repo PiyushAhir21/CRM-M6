@@ -5,7 +5,15 @@
     <classes>
       <class name="organizationTest.CreateOrgTest">
         <methods>
+          <include name="openingBrowser"/>
+          <include name="afme"/>
+          <include name="bt"/>
+          <include name="as"/>
+          <include name="bs"/>
+          <include name="closingBrowser"/>
+          <include name="at"/>
           <include name="createOrgTest"/>
+          <include name="login"/>
         </methods>
       </class> <!-- organizationTest.CreateOrgTest -->
     </classes>

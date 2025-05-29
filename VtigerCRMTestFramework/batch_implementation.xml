@@ -3,10 +3,8 @@
 <suite name="Suite">
   <test thread-count="5" name="Test">
     <classes>
-      <class name="typesOfExecution.Demo4"/>
-      <class name="typesOfExecution.Demo3"/>
-      <class name="typesOfExecution.Demo2"/>
-      <class name="typesOfExecution.Demo1"/>
+      <class name="contactTest.CreateConTest"/>
+      <class name="organizationTest.CreateOrgTest"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

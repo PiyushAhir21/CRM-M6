@@ -6,7 +6,7 @@ import org.testng.Reporter;
 import org.testng.annotations.Test;
 
 public class Demo2 {
-	@Test
+	@Test(groups =  "regression")
 	public void sub() throws InterruptedException {
 		WebDriver driver = new ChromeDriver();
 		Reporter.log("Demo2 class");

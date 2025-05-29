@@ -52,7 +52,7 @@ public class LoginPage {
 	
 	public void login() {
 		getUn().sendKeys("admin");
-		getPwd().sendKeys("password");
+		getPwd().sendKeys("admin");
 		getLoginBtn().click();
 	}
 
