@@ -1,81 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-05-29T16:56:57 IST" name="Suite" finished-at="2025-05-29T16:57:10 IST" duration-ms="12534">
+  <suite started-at="2025-06-02T14:52:53 IST" name="Default suite" finished-at="2025-06-02T14:52:53 IST" duration-ms="64">
     <groups>
     </groups>
-    <test started-at="2025-05-29T16:56:57 IST" name="Test1" finished-at="2025-05-29T16:57:10 IST" duration-ms="12474">
-      <class name="contactTest.CreateConTest">
-        <test-method is-config="true" signature="bt()[pri:0, instance:contactTest.CreateConTest@4116aac9]" started-at="2025-05-29T16:56:57 IST" name="bt" finished-at="2025-05-29T16:56:57 IST" duration-ms="2" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- bt -->
-        <test-method is-config="true" signature="openingBrowser()[pri:0, instance:contactTest.CreateConTest@4116aac9]" started-at="2025-05-29T16:56:57 IST" name="openingBrowser" finished-at="2025-05-29T16:56:59 IST" duration-ms="1930" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- openingBrowser -->
-        <test-method is-config="true" signature="login()[pri:0, instance:contactTest.CreateConTest@4116aac9]" started-at="2025-05-29T16:56:59 IST" name="login" finished-at="2025-05-29T16:57:01 IST" duration-ms="1256" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- login -->
-        <test-method signature="createConTest()[pri:0, instance:contactTest.CreateConTest@4116aac9]" started-at="2025-05-29T16:57:01 IST" name="createConTest" finished-at="2025-05-29T16:57:09 IST" duration-ms="8143" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- createConTest -->
-        <test-method is-config="true" signature="afme()[pri:0, instance:contactTest.CreateConTest@4116aac9]" started-at="2025-05-29T16:57:09 IST" name="afme" finished-at="2025-05-29T16:57:10 IST" duration-ms="846" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afme -->
-        <test-method is-config="true" signature="closingBrowser()[pri:0, instance:contactTest.CreateConTest@4116aac9]" started-at="2025-05-29T16:57:10 IST" name="closingBrowser" finished-at="2025-05-29T16:57:10 IST" duration-ms="218" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- closingBrowser -->
-        <test-method is-config="true" signature="at()[pri:0, instance:contactTest.CreateConTest@4116aac9]" started-at="2025-05-29T16:57:10 IST" name="at" finished-at="2025-05-29T16:57:10 IST" duration-ms="4" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- at -->
-      </class> <!-- contactTest.CreateConTest -->
-    </test> <!-- Test1 -->
-    <test started-at="2025-05-29T16:56:57 IST" name="Test2" finished-at="2025-05-29T16:57:10 IST" duration-ms="12534">
-      <class name="organizationTest.CreateOrgTest">
-        <test-method is-config="true" signature="bs()[pri:0, instance:organizationTest.CreateOrgTest@ae13544]" started-at="2025-05-29T16:56:57 IST" name="bs" finished-at="2025-05-29T16:56:57 IST" duration-ms="12" status="PASS">
+    <test started-at="2025-06-02T14:52:53 IST" name="Default test" finished-at="2025-06-02T14:52:53 IST" duration-ms="64">
+      <class name="extra.WorkingWithAdvanceReports">
+        <test-method is-config="true" signature="bs()[pri:0, instance:extra.WorkingWithAdvanceReports@3eb738bb]" started-at="2025-06-02T14:52:53 IST" name="bs" finished-at="2025-06-02T14:52:53 IST" duration-ms="254" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- bs -->
-        <test-method is-config="true" signature="bt()[pri:0, instance:organizationTest.CreateOrgTest@ae13544]" started-at="2025-05-29T16:56:57 IST" name="bt" finished-at="2025-05-29T16:56:57 IST" duration-ms="1" status="PASS">
+        <test-method signature="case1()[pri:0, instance:extra.WorkingWithAdvanceReports@3eb738bb]" started-at="2025-06-02T14:52:53 IST" name="case1" finished-at="2025-06-02T14:52:53 IST" duration-ms="13" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- bt -->
-        <test-method is-config="true" signature="openingBrowser()[pri:0, instance:organizationTest.CreateOrgTest@ae13544]" started-at="2025-05-29T16:56:57 IST" name="openingBrowser" finished-at="2025-05-29T16:56:59 IST" duration-ms="1955" status="PASS">
+        </test-method> <!-- case1 -->
+        <test-method signature="case2()[pri:0, instance:extra.WorkingWithAdvanceReports@3eb738bb]" started-at="2025-06-02T14:52:53 IST" name="case2" finished-at="2025-06-02T14:52:53 IST" duration-ms="4" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- openingBrowser -->
-        <test-method is-config="true" signature="login()[pri:0, instance:organizationTest.CreateOrgTest@ae13544]" started-at="2025-05-29T16:56:59 IST" name="login" finished-at="2025-05-29T16:57:04 IST" duration-ms="4708" status="PASS">
+        </test-method> <!-- case2 -->
+        <test-method signature="case3()[pri:0, instance:extra.WorkingWithAdvanceReports@3eb738bb]" started-at="2025-06-02T14:52:53 IST" name="case3" finished-at="2025-06-02T14:52:53 IST" duration-ms="2" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- login -->
-        <test-method signature="createOrgTest()[pri:0, instance:organizationTest.CreateOrgTest@ae13544]" started-at="2025-05-29T16:57:04 IST" name="createOrgTest" finished-at="2025-05-29T16:57:09 IST" duration-ms="4805" status="PASS">
+        </test-method> <!-- case3 -->
+        <test-method is-config="true" signature="repBackup()[pri:0, instance:extra.WorkingWithAdvanceReports@3eb738bb]" started-at="2025-06-02T14:52:53 IST" name="repBackup" finished-at="2025-06-02T14:52:54 IST" duration-ms="357" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- createOrgTest -->
-        <test-method is-config="true" signature="afme()[pri:0, instance:organizationTest.CreateOrgTest@ae13544]" started-at="2025-05-29T16:57:09 IST" name="afme" finished-at="2025-05-29T16:57:10 IST" duration-ms="808" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afme -->
-        <test-method is-config="true" signature="closingBrowser()[pri:0, instance:organizationTest.CreateOrgTest@ae13544]" started-at="2025-05-29T16:57:10 IST" name="closingBrowser" finished-at="2025-05-29T16:57:10 IST" duration-ms="210" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- closingBrowser -->
-        <test-method is-config="true" signature="as()[pri:0, instance:organizationTest.CreateOrgTest@ae13544]" started-at="2025-05-29T16:57:10 IST" name="as" finished-at="2025-05-29T16:57:10 IST" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- as -->
-        <test-method is-config="true" signature="at()[pri:0, instance:organizationTest.CreateOrgTest@ae13544]" started-at="2025-05-29T16:57:10 IST" name="at" finished-at="2025-05-29T16:57:10 IST" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- at -->
-      </class> <!-- organizationTest.CreateOrgTest -->
-    </test> <!-- Test2 -->
-  </suite> <!-- Suite -->
+        </test-method> <!-- repBackup -->
+      </class> <!-- extra.WorkingWithAdvanceReports -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>

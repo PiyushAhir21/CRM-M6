@@ -3,19 +3,20 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="organizationTest.CreateOrgTest">
+      <class name="configuration.CrmTest">
         <methods>
           <include name="openingBrowser"/>
-          <include name="afme"/>
           <include name="bt"/>
           <include name="as"/>
+          <include name="afme"/>
           <include name="closingBrowser"/>
           <include name="bs"/>
+          <include name="modify"/>
           <include name="at"/>
-          <include name="createOrgTest"/>
+          <include name="delete"/>
           <include name="login"/>
         </methods>
-      </class> <!-- organizationTest.CreateOrgTest -->
+      </class> <!-- configuration.CrmTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
