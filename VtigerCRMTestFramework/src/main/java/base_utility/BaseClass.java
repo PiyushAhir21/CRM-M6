@@ -32,7 +32,7 @@ public class BaseClass {
 	public void bs() {
 		System.out.println("DB connection + Report configuration");
 	}
-
+ 
 	@BeforeTest
 	public void bt() {
 		System.out.println("Pre conditions");

@@ -26,6 +26,8 @@ public class WorkingWithAdvanceReports {
 
 		report.attachReporter(spark);
 
+	
+		
 		report.setSystemInfo("browser", "chrome");
 		report.setSystemInfo("windows", "11");
 		report.setSystemInfo("date", "02 - June - 2025");
