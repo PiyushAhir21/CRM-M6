@@ -5,7 +5,8 @@
     <classes>
       <class name="listeners_utility.DemoForListener">
         <methods>
-          <include name="case1"/>
+          <include name="openBro"/>
+          <include name="case2"/>
         </methods>
       </class> <!-- listeners_utility.DemoForListener -->
     </classes>
